@@ -12,4 +12,4 @@
 - Unique username validation
 - Different card colors to distinguish own messages from others  
 
-Hosted on ``` https://anonychatter.herokuapp.com/ ```
+Hosted on (https://anonychatter.herokuapp.com/)
