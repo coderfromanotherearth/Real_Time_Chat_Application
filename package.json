@@ -1,5 +1,5 @@
 {
-  "name": "chattingapp",
+  "name": "socketchatter",
   "version": "1.0.0",
   "description": "application created using Socket.io on WebSocket protocol",
   "main": "server.js",
