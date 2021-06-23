@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <head>
-  <title>Chatter</title>
+  <title>SocketChatter</title>
   <link
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
     crossorigin="anonymous"
   />
+  <link href="style.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-  <p class="text-center" id="greeting"></p>
+  <p id="user-avatar-display" class="user-avatar-container"></p>
+  <p class="text-center">Hi there, <span id="username-greet"></span></p>
   <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Username</span>
-    </div>
-    <input type="text" class="form-control" id="username" />
-    <input type="submit" value="Set username" id="set_username" />
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      placeholder="Set a new username"
+    />
+    <input type="submit" value="Set" id="set_username" class="submit-btn" />
+  </div>
+  <div class="user-exist-error-container">
+    <p id="user-exist-error" class="user-exist-error-style center hide">
+      Username already exist
+    </p>
   </div>
   <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Your message</span>
-    </div>
     <textarea
+      placeholder="Type your message..."
       class="form-control"
       aria-label="With textarea"
       id="message"
     ></textarea>
-    <input type="submit" value="Send" id="send_message" />
+    <input type="submit" value="Send" id="send_message" class="submit-btn" />
   </div>
-  <div id="chatroom"></div>
+  <div id="chatroom" class="chatroom-style"></div>
+  <p id="typing_container"></p>
 </body>
 
+<script src="constants.js"></script>
+<script src="utils.js"></script>
 <script src="client.js"></script>

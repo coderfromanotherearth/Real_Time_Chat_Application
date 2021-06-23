@@ -1,0 +1,92 @@
+body {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.container img,
+.user-avatar-display-style {
+  float: left;
+  max-width: 50px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.container img.right,
+.container span.right {
+  float: right;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+.time-left {
+  float: left;
+  color: #999;
+}
+
+.user-exist-error-style {
+  color: red;
+}
+.user-exist-error-container {
+  height: 22px;
+}
+
+.time-uname-style {
+  margin-top: 30px;
+}
+
+.user-avatar-display-style {
+  display: block;
+  float: none;
+}
+
+.user-avatar-container {
+  margin-top: 10px;
+  height: 55px;
+}
+
+.hide {
+  display: none;
+}
+
+.input-group,
+.center {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-btn {
+  width: 53px;
+}
+
+.chatroom-style {
+  overflow: auto;
+  height: 390px;
+  margin-top: 10px;
+}
