@@ -48,7 +48,7 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("username_changed_msg", { oldUserName, newUserName });
   });
   socket.on("send_message", ({ message }) => {
-    const dateObject = new Date();
+    const dateObject = getIndianTime();
     io.sockets.emit("clear_typing_message");
     io.sockets.emit("display_message", {
       sender: socket.username,
@@ -77,3 +77,10 @@ io.on("connection", (socket) => {
     });
   });
 });
+
+function getIndianTime() {
+  const currentTime = new Date();
+  const currentOffset = currentTime.getTimezoneOffset();
+  const ISTOffset = 330; // IST offset UTC +5:30
+  return new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+}
