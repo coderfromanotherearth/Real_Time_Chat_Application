@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 const { AvatarGenerator } = require("random-avatar-generator");
 const generator = new AvatarGenerator();
 const app = express();
-
+const port = process.env.PORT || 3000;
 const connectedUsers = [];
 
 app.set("view engine", "ejs");
@@ -17,8 +17,8 @@ app.get("/checkIfUniqueUserName", (req, res) => {
   res.send(!connectedUsers.includes(req.query.username));
 });
 
-const server = app.listen(3000, () => {
-  console.log("Server is listening at port 3000");
+const server = app.listen(port, () => {
+  console.log(`Server is listening at port ${port}`);
 });
 const io = require("socket.io")(server);
 

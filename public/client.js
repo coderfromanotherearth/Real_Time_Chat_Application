@@ -3,16 +3,16 @@ $(() => {
   if (storageAvailable("localStorage")) {
     existingUserName = localStorage.getItem(USERNAME_LOCALSTORAGE_KEY) || "";
   }
-  const socket = io.connect("http://localhost:3000", {
+  const socket = io.connect(document.location.href, {
       query: `existingUserName=${existingUserName}`,
     }),
     userAvatarDisplay = $("#user-avatar-display"),
     usernameGreet = $("#username-greet"),
     usernameInputBox = $("#username"),
-    setUsernameBtn = $("#set_username"),
+    setUsernameBtn = $("#set-username"),
     messageInputBox = $("#message"),
-    sendMessageBtn = $("#send_message"),
-    typingTextContainer = $("#typing_container"),
+    sendMessageBtn = $("#send-message"),
+    typingTextContainer = $("#typing-container"),
     bgColorChoices = ["antiquewhite", "lavender", "thistle", "powderblue"];
   let username;
 
