@@ -1,1 +1,1 @@
-const USERNAME_LOCALSTORAGE_KEY = "SochetChatterUserName";
+const USERNAME_LOCALSTORAGE_KEY = "AnonyChatterUserName";
